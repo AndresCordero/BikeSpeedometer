@@ -1,17 +1,34 @@
 from pynput import keyboard
 import time
 
+wheel_cycles = 0
+distance_per_cycle = 2.1  
+
+def main():
+    print("Presiona SPACE para contar vueltas, ESC para salir.")
+    
+    # Start listener
+    with keyboard.Listener(on_press=on_press) as listener:
+        listener.join()  # Esperar hasta que se presione ESC
+
+    # Distance mesurement
+    distance = wheel_cycles * distance_per_cycle
+    print(f'\nThe distance traveled is {distance} meters')
+
+
+
+#Getting data from keyboard
 def on_press(key):
+    global wheel_cycles
+
     if key == keyboard.Key.space:
-        print("¡Se presionó SPACE!")
+        wheel_cycles += 1
+        print(f"SPACE has been pushed! Total cycles: {wheel_cycles}")
+
     elif key == keyboard.Key.esc:
-        print("Saliendo...")
-        # Detener el listener para salir del programa
-        return False
+        print("exiting...")
+        return False  # stop listener
 
 
-
-with keyboard.Listener(on_press=on_press) as listener:
-    print("Presiona SPACE para ver un mensaje, ESC para salir.")
-    listener.join()
-
+if __name__ == "__main__":
+    main()
