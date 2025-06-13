@@ -4,8 +4,8 @@ A Python script that simulates a bicycle speedometer by tracking virtual wheel r
 
 Each time you press the **spacebar (`SPACE`)**, the program simulates a full wheel rotation. It calculates and displays:
 
-- 🚀 **Instantaneous speed** in meters per second (m/s)
-- 📍 **Distance traveled** in meters
+- 🚀 **Instantaneous speed** in meters per second (km/h)
+- 📍 **Distance traveled** in Kilometers
 - 📊 **Average speed** (at the end of the session)
 
 ---
@@ -32,13 +32,13 @@ Press ESC to end the simulation and get a summary.
 
 ### 🧠 Calculation Details
 
-Distance per cycle: 2.1 meters (modifiable in code)
+Distance per cycle: 2.1 meters 
 
-Speed = distance_per_cycle / time_between_cycles (in m/s)
+Speed = distance_per_cycle / time_between_cycles 
 
-Total distance = wheel_cycles * 2.1 (in meters)
+Total distance = wheel_cycles * distance_per_cycle
 
-Average speed = total_distance / total_time (in m/s)
+Average speed = total_distance / total_time
 
 
 
@@ -56,12 +56,17 @@ Press ESC to finish and view the summary.
 ### Sample Output:
 
 Press SPACE to pedal and press ESC to exit.
-SPACE! Vueltas: 1 -- Velocidad: N/A (first cycle)
-Total cycles: 1 -- Distance: 2 meters -- Velocity: 4.2 m/s
-Total cycles: 2 -- Distance: 4 meters -- Velocity: 5.9 m/s
-...
+SPACE!
+Total Cycles: 1 -- Distance: N/A  -- Velocity: N/A (first cycle)
+Total cycles: 2 -- Distance: 0.0 Kms -- Velocity: 43.96 km/h
+Total cycles: 3 -- Distance: 0.0 Kms -- Velocity: 47.92 km/h
+Total cycles: 4 -- Distance: 0.01 Kms -- Velocity: 53.15 km/h
+Total cycles: 5 -- Distance: 0.01 Kms -- Velocity: 47.75 km/h
+Total cycles: 6 -- Distance: 0.01 Kms -- Velocity: 43.95 km/h
+Total cycles: 7 -- Distance: 0.01 Kms -- Velocity: 56.15 km/h
+Total cycles: 8 -- Distance: 0.01 Kms -- Velocity: 45.54 km/h
 
 exiting...
 
-Distance traveled in this trip: 12.6 meters
-The average speed was: 2.87 m/s
+Distance traveled in this trip: 0.02 Kilometers
+The average speed was: 56.45 km/h
